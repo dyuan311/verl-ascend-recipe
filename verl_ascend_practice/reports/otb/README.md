@@ -4,7 +4,7 @@ Last updated: 10/15/2026.
 
 Optimal Token Baseline (OTB) uses old-policy token probabilities and squared
 vocabulary probabilities to calculate token-wise advantages. This practice uses
-verl `release/v0.8.0` at `3e4edb6e`, Megatron training, and vLLM-Ascend generation
+verl [`release/v0.8.0` at `3e4edb6e`](REQUIRED_VERL.txt), Megatron training, and vLLM-Ascend generation
 on eight Ascend 910A3 devices.
 
 ## Environment
@@ -77,10 +77,7 @@ per prompt for the grouped baseline calculation.
 | Validation | Before training and every five steps; deterministic generation |
 | Epoch limit / training steps / checkpoint frequency | 15 / 100 / `save_freq=-1` |
 
-## Memory and logging
-
-Rollout memory fractions 0.75 and 0.7 failed during key-value cache restoration
-after a training update. The measured 100-step run used 0.6.
+## Logging
 
 Logs are saved under `OUTPUT_DIR/logs`: `trainer.log` contains training output,
 and `metrics.log` contains all trainer metrics.

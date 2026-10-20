@@ -98,7 +98,6 @@ python3 -m verl.trainer.main_ppo \
     actor_rollout_ref.rollout.n=8 \
     +actor_rollout_ref.rollout.engine_kwargs.vllm.additional_config.ascend_compilation_config.enable_npugraph_ex=False \
     trainer.device=npu \
-    trainer.use_v1=False \
     trainer.n_gpus_per_node="${NPUS_PER_NODE}" \
     trainer.nnodes=1 \
     trainer.logger='["console","wandb","file"]' \
